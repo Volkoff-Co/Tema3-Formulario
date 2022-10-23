@@ -5,28 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tema3_Formulario"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
-        <TextBlock DockPanel.Dock="Top">Formulario</TextBlock>
-
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-        </Grid>
-
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Text="Formulario" FontSize="30" FontWeight="Bold" Margin="10"></TextBlock>
+        
         <DockPanel DockPanel.Dock="Bottom">
-            <WrapPanel>
-
+            <Label HorizontalAlignment="Left" Content="Gregory Volkov" FontSize="15" FontWeight="Medium" FontStyle="Italic"></Label>
+            <WrapPanel HorizontalAlignment="Right">
+                <Button HorizontalAlignment="Right" Margin="5" Content="Aceptar" Width="100"></Button>
+                <Button HorizontalAlignment="Right" Margin="5" Content="Cancelar" Width="100"></Button>
             </WrapPanel>
         </DockPanel>
         
+        <Grid DockPanel.Dock="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Image Grid.Column="1" Source="pics/foto.jpg" Margin="15,0,15,5" Stretch="Fill" FlowDirection="LeftToRight"></Image>
+
+            <StackPanel Grid.Column="0">
+                <Border CornerRadius="5,5,5,5" Margin="0,0,0,20" Padding="10,10,10,10" BorderThickness="3" BorderBrush="Black" Background="AliceBlue">
+                    <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Nombre" Margin="2"></TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Edad" Margin="2"></TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Dirección" Margin="2"></TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="0" Margin="2"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="1" Margin="2"></TextBox>
+                        <TextBox Grid.Column="1" Grid.Row="2" Margin="2"></TextBox>
+                        <Image Grid.Column="2" Grid.Row="0" Source="pics/info.png" Margin="2" ToolTip="Máximo 100 carácteres"></Image>
+                        <Image Grid.Column="2" Grid.Row="1" Source="pics/info.png" Margin="2" ToolTip="Número 0 y 100"></Image>
+                        <Image Grid.Column="2" Grid.Row="2" Source="pics/info.png" Margin="2" ToolTip="Incluir el código postal"></Image>
+                    </Grid>
+                </Border>
+
+                <Border BorderThickness="3" BorderBrush="Black" CornerRadius="5" Padding="10" Background="Honeydew">
+                    <Border.Effect>
+                        <DropShadowEffect></DropShadowEffect>
+                    </Border.Effect>
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Header="Aficiones" HorizontalAlignment="Left" Width="150" Margin="0,0,20,5">
+                            <StackPanel>
+                                <CheckBox>Leer</CheckBox>
+                                <CheckBox>Hacer deporte</CheckBox>
+                                <CheckBox>Viajar</CheckBox>
+                                <CheckBox>Ver peliculas</CheckBox>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Estado civil" HorizontalAlignment="Left" Width="150" Margin="0,0,20,5">
+                            <StackPanel>
+                                <CheckBox>Soltero</CheckBox>
+                                <CheckBox>Casado</CheckBox>
+                                <CheckBox>Viudo</CheckBox>
+                                <CheckBox>Divorciado</CheckBox>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        
+
     </DockPanel>
 </Window>
